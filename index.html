@@ -2,142 +2,45 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#020604">
-<title>MUTTAQINBD.TECH // SIMULATION</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<title>TiGER-M@TE // Classic Defacement Style Recreation</title>
 <style>
-:root{--g:#00ff83;--r:#ff303e;--white:#e7eee9;--muted:#91a69a;--line:#00ff834a}
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:#020604;color:var(--white);font-family:Consolas,"Courier New",monospace}
-body{min-height:100vh;overflow-x:hidden}
-#matrix{position:fixed;inset:0;width:100%;height:100%;opacity:.16;pointer-events:none}
-.scanlines{position:fixed;inset:0;pointer-events:none;z-index:3;opacity:.12;background:repeating-linear-gradient(0deg,transparent 0 3px,#000 4px 5px)}
-.shell{position:relative;z-index:1;max-width:1500px;margin:auto;min-height:100vh;padding:22px;display:grid;grid-template-columns:1fr 1.35fr 1fr;grid-template-rows:auto 1fr auto;gap:16px}
-.panel{border:1px solid var(--line);background:linear-gradient(135deg,#031109e8,#020604e8);padding:15px;position:relative;box-shadow:0 0 22px #00ff830a}
-.panel:before,.panel:after{content:"";position:absolute;width:22px;height:1px;background:var(--g);top:-1px;left:-1px}
-.panel:after{top:auto;left:auto;right:-1px;bottom:-1px}
-.label{font-size:12px;letter-spacing:2px;color:var(--g);margin-bottom:12px}
-.small{font-size:12px;color:var(--muted);line-height:1.8}
-.value{color:var(--white)}
-.green{color:var(--g)}.red{color:var(--r)}
-.left,.right{display:flex;flex-direction:column;gap:16px}
-.map{height:180px;display:grid;place-items:center;color:#00ff8366;font-size:11px;letter-spacing:2px;background:radial-gradient(ellipse,#06331a 0,transparent 68%)}
-.world{width:100%;height:100%;max-height:175px}
-.center{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px 4px}
-.mask{font-size:72px;filter:drop-shadow(0 0 16px #00ff8350);line-height:1.1}
-.eyebrow{font-size:12px;letter-spacing:7px;color:#cbd8ce;margin-top:16px}
-h1{font-size:clamp(42px,7vw,92px);line-height:.95;margin:18px 0 8px;color:#fff;letter-spacing:2px;text-shadow:3px 0 var(--r),-3px 0 var(--g);animation:glitch 3s infinite}
-h2{font-size:clamp(15px,2vw,24px);letter-spacing:7px;margin:8px 0 24px}
-.quote{border-left:2px solid var(--g);border-right:2px solid var(--g);padding:12px 20px;line-height:2;letter-spacing:4px;font-size:12px}
-.logs{font-size:12px;line-height:1.95;color:#bdc9c0;white-space:pre-line}
-.blink{animation:blink .8s steps(2) infinite}
-.progress{height:4px;background:#173323;margin-top:10px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:var(--g);animation:load 8s linear infinite}
-.footer{grid-column:1/-1;text-align:center;border-top:1px solid var(--line);padding:15px 0 4px;color:#a3b4a8;font-size:10px;letter-spacing:3px;line-height:2}
-button{font:inherit;background:#06170d;color:var(--g);border:1px solid var(--line);padding:9px 13px;cursor:pointer;margin-top:12px}
-button:hover{background:#0b2c18}
-.disclaimer{font-size:11px;color:#a7b8ac;line-height:1.7}
-@keyframes blink{50%{opacity:0}}@keyframes load{to{width:100%}}
-@keyframes glitch{0%,91%,100%{transform:translateX(0)}92%{transform:translateX(2px)}94%{transform:translateX(-2px)}96%{transform:translateX(1px)}}
-@media(max-width:900px){.shell{grid-template-columns:1fr 1fr}.center{grid-column:1/-1;grid-row:1}.left{grid-column:1}.right{grid-column:2}.footer{grid-column:1/-1}.mask{font-size:52px}h1{font-size:clamp(40px,9vw,72px)}}
-@media(max-width:560px){.shell{display:flex;flex-direction:column;padding:12px}.center{order:0;min-height:55vh}.left{order:1}.right{order:2}.footer{order:3}.quote{letter-spacing:2px}.panel{padding:13px}.eyebrow{letter-spacing:4px}}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#000;color:#eee}
+body{font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+main{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:34px 18px;position:relative}
+main:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,#171717 0,#050505 42%,#000 75%);pointer-events:none}
+.wrap{position:relative;width:min(960px,100%);animation:appear 1.4s ease-out both}
+.rule{width:min(680px,90%);height:1px;background:linear-gradient(90deg,transparent,#a50019,transparent);margin:26px auto}
+.small{font:12px/1.8 "Courier New",monospace;color:#8b8b8b;letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(42px,9vw,94px);line-height:.95;letter-spacing:2px;margin:24px 0 10px;font-weight:normal;text-shadow:0 0 16px #c00020}
+.by{font-size:clamp(18px,3vw,27px);color:#bdbdbd;margin:18px 0 6px}
+.name{font-family:"Courier New",monospace;font-size:clamp(26px,6vw,58px);font-weight:bold;letter-spacing:1px;color:#e6e6e6;text-shadow:2px 0 #7b0016,-2px 0 #28000a,0 0 22px #a4001b;animation:flicker 6s infinite}
+.tag{font: bold clamp(15px,3vw,23px) "Courier New",monospace;color:#c70024;letter-spacing:1px;margin-top:12px}
+.message{max-width:690px;margin:28px auto 0;font-size:16px;line-height:1.8;color:#aaa}
+.greet{font:12px/2 "Courier New",monospace;color:#777;max-width:800px;margin:22px auto 0;overflow-wrap:anywhere}
+.badge{display:inline-block;border:1px solid #5b101c;color:#a9a9a9;padding:7px 12px;font:10px "Courier New",monospace;letter-spacing:2px;margin-top:28px}
+footer{position:absolute;bottom:15px;left:0;right:0;text-align:center;color:#4c4c4c;font:10px "Courier New",monospace;letter-spacing:1px;padding:0 12px}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes flicker{0%,96%,100%{opacity:1}97%{opacity:.65}98%{opacity:.95}99%{opacity:.78}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important}}
 </style>
 </head>
 <body>
-<canvas id="matrix" aria-hidden="true"></canvas><div class="scanlines"></div>
-<main class="shell">
-  <aside class="left">
-    <section class="panel">
-      <div class="label">[ VISUAL SIMULATION ]</div>
-      <div class="logs"> &gt;&gt; TARGET : <span class="value">MUTTAQINBD.TECH</span>
- &gt;&gt; MODE   : <span class="green">DEMO ONLY</span>
- &gt;&gt; ACCESS : <span class="green">NOT PERFORMED</span>
- &gt;&gt; DATA   : <span class="value">UNTOUCHED</span>
- &gt;&gt; STATUS : <span class="red">CINEMATIC UI</span></div>
-    </section>
-    <section class="panel">
-      <div class="label">[ NETWORK MAP // DECORATIVE ]</div>
-      <div class="map">
-        <svg class="world" viewBox="0 0 360 170" role="img" aria-label="Decorative abstract network map">
-          <g fill="#00ff83" opacity=".65">
-          <path d="M24 43l19-17 27 4 10 12 22 2 6 13-17 9-5 20-14 10-11-18-20-5-7-16-17-2zM91 96l17 6 14 22-3 27-12-8-4-22-13-10zM151 40l19-14 25 4 13 12 30-1 13 13-9 14-21 2-10 17-15 1-11-17-18-5-6-14-16-1zM194 89l20-9 22 7 10 20-13 25-16 3-8-20-14-8zM264 47l23-8 27 10 12 16-15 12-21-3-14 10-12-13z" />
-          </g><g stroke="#00ff83" opacity=".4" fill="none"><path d="M50 60L177 45 214 99 295 62 112 120 177 45"/><circle cx="50" cy="60" r="3"/><circle cx="177" cy="45" r="3"/><circle cx="214" cy="99" r="3"/><circle cx="295" cy="62" r="3"/><circle cx="112" cy="120" r="3"/></g>
-        </svg>
-      </div>
-      <div class="small">NETWORK VISUALIZATION: <span class="green">DECORATIVE</span><br>LIVE HOST DATA: <span class="red">NOT CONNECTED</span></div>
-    </section>
-    <section class="panel">
-      <div class="label">[ TERMINAL OUTPUT ]</div>
-      <div class="logs" id="terminal"></div>
-      <div class="progress"><span></span></div>
-    </section>
-  </aside>
-
-  <section class="center">
-    <div class="mask" aria-hidden="true">◉</div>
-    <div class="eyebrow">M U T T A Q I N B D . T E C H</div>
-    <h1>HACKED?</h1>
-    <h2>BY ANONYMOUS</h2>
-    <div class="quote">WE ARE ANONYMOUS<br>WE ARE LEGION<br>WE DO NOT FORGET<br>WE DO NOT FORGET<br><span class="red">EXPECT US</span></div>
-    <p class="small">A fictional hacker-style landing page<br><span class="green">JUST FOR FUN — NO INTRUSION</span></p>
+<main>
+  <section class="wrap" aria-label="Fictional classic defacement-style recreation">
+    <div class="small">Classic underground web aesthetic</div>
+    <div class="rule"></div>
+    <h1>HACKED</h1>
+    <div class="by">By</div>
+    <div class="name">TiGER-M@TE</div>
+    <div class="tag">#Bangladeshi HackeR</div>
+    <div class="rule"></div>
+    <p class="message">“Respect the people who build and maintain the web.<br>Security is a responsibility—not an afterthought.”</p>
+    <p class="greet">Greetz: c0de-X-1337 · h311 c0d3 · kinG oF coNTroL · F0RTYS3V3N · aBu.HaLiL501 · W7sH.SyRiA · Ne0-h4ck3r</p>
+    <div class="badge">FICTIONAL RECREATION • LOCAL VISUAL ONLY</div>
   </section>
-
-  <aside class="right">
-    <section class="panel">
-      <div class="label">[ SIMULATED ACTIVITY ]</div>
-      <div class="logs" id="activity"></div>
-    </section>
-    <section class="panel">
-      <div class="label red">[ MESSAGE ]</div>
-      <p class="small">This page is a visual prank / design demo. It does not connect to a server, scan a system, or access a database.</p>
-      <p class="small">No personal data has been accessed or stolen.</p>
-      <div class="label">[ SECURITY NOTE ]</div>
-      <p class="disclaimer">Security is a process, not a product. Keep systems updated and protect your accounts.</p>
-      <button id="soundToggle" type="button">ENABLE TERMINAL BEEP</button>
-      <div class="small" id="soundStatus">Audio: off</div>
-    </section>
-  </aside>
-
-  <footer class="footer">MUTTAQINBD.TECH // ANONYMOUS-INSPIRED THEME // JUST FOR FUN<br><span class="green">“A FREE INTERNET, A FAIR WORLD.”</span></footer>
+  <footer>NO REAL WEBSITE ACCESS • NO REMOTE ACTIONS • HISTORIC-STYLE FAN RECREATION</footer>
 </main>
-<script>
-const canvas=document.getElementById('matrix'),ctx=canvas.getContext('2d');
-let drops=[],font=14,cols=0;
-function resize(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);cols=Math.ceil(innerWidth/font);drops=Array.from({length:cols},()=>Math.random()*-30)}
-function draw(){ctx.fillStyle='rgba(2,6,4,.12)';ctx.fillRect(0,0,innerWidth,innerHeight);ctx.fillStyle='#00ff83';ctx.font=font+'px monospace';for(let i=0;i<drops.length;i++){ctx.fillText('01アイ'[Math.floor(Math.random()*5)],i*font,drops[i]*font);if(drops[i]*font>innerHeight&&Math.random()>.975)drops[i]=0;drops[i]++}}
-addEventListener('resize',resize);resize();setInterval(draw,55);
-
-const terminalLines=[
-'> Initializing visual interface...',
-'> Loading decorative matrix layer...',
-'> Rendering fictional status panels...',
-'> No server connection initiated.',
-'> No data accessed.',
-'> Demo sequence ready.'
-];
-let ti=0;
-const term=document.getElementById('terminal');
-function typeNext(){if(ti>=terminalLines.length){term.innerHTML+='<br><span class="green">&gt; Simulation complete.</span> <span class="blink">_</span>';return}term.innerHTML+=terminalLines[ti++]+'<br>';setTimeout(typeNext,480)}
-typeNext();
-const activity=[
-'[ DEMO ] Initializing interface...',
-'[ DEMO ] Rendering terminal panel...',
-'[ DEMO ] Matrix effect running...',
-'[ DEMO ] Server connection: none',
-'[ DEMO ] Database access: none',
-'[ DEMO ] Simulation active'
-];
-let ai=0;const act=document.getElementById('activity');
-function showActivity(){act.textContent=activity.slice(0,Math.min(ai+1,activity.length)).join('\n');ai=(ai+1)%activity.length;setTimeout(showActivity,1400)}
-showActivity();
-
-let audio=null,beep=false;
-document.getElementById('soundToggle').addEventListener('click',()=>{
-  beep=!beep;
-  document.getElementById('soundStatus').textContent='Audio: '+(beep?'enabled':'off');
-  document.getElementById('soundToggle').textContent=beep?'DISABLE TERMINAL BEEP':'ENABLE TERMINAL BEEP';
-  if(beep){try{audio=new (window.AudioContext||window.webkitAudioContext)();const osc=audio.createOscillator(),gain=audio.createGain();osc.frequency.value=660;gain.gain.value=.025;osc.connect(gain);gain.connect(audio.destination);osc.start();osc.stop(audio.currentTime+.07)}catch(e){}}
-});
-</script>
 </body>
 </html>
